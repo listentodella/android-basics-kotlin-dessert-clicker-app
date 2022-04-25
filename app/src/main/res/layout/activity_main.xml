@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2020, The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -57,8 +42,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/cupcake" />
 
-        <!-- Code for white box at the bottom, using ShapeDrawable defined in the drawable folder -->
-
         <View
             android:id="@+id/white_background"
             android:layout_width="wrap_content"
@@ -87,7 +70,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:padding="16dp"
-            android:text="@string/dessert_sold"
+            android:text='@string/dessert_sold'
             android:textColor="@color/grey"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@+id/amount_sold_text"
@@ -97,14 +80,14 @@
             android:id="@+id/amount_sold_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
             android:padding="16dp"
-            android:text="@{amountSold.toString()}"
+            android:text='@{amountSold.toString()}'
             android:textColor="@color/grey"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toTopOf="@+id/revenue_text"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="12" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
