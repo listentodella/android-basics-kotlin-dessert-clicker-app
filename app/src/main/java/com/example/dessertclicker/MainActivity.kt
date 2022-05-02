@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var bindings: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(TAG, "onCreate Called")
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Called")
         bindings = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         bindings.dessertButton.setOnClickListener {
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onPause Called")
+        Log.d(TAG, "onStop Called")
     }
 
     override fun onDestroy() {
@@ -94,9 +94,7 @@ class MainActivity : AppCompatActivity() {
         for (dessert in allDesserts) {
             if (dessertsSold >= dessert.amount) {
                 newDessert = dessert
-                Log.d(TAG, "showCurrentDessert: current dessert sold out, we will sell new dessert")
             } else {
-                Log.d(TAG, "showCurrentDessert: still sell such dessert")
                 break
             }
         }
@@ -122,8 +120,9 @@ class MainActivity : AppCompatActivity() {
 
         try {
             startActivity(shareIntent)
-        } catch (ex:ActivityNotFoundException) {
-            Toast.makeText(this, getString(R.string.sharing_not_available), Toast.LENGTH_LONG).show()
+        } catch (ex: ActivityNotFoundException) {
+            Toast.makeText(this, getString(R.string.sharing_not_available), Toast.LENGTH_LONG)
+                .show()
         }
     }
 
